@@ -2,16 +2,16 @@
 class Konjure < Formula
   desc "Manifest appear!"
   homepage "https://github.com/carbonrelay/konjure/"
-  version "0.2.1"
+  version "0.2.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/carbonrelay/konjure/releases/download/v0.2.1/konjure-darwin-amd64.tar.gz"
-    sha256 "e1b23023d33f006fbd63ebfd9f325fe0ac51bc02adc3e5007af46a53efce86be"
+    url "https://github.com/carbonrelay/konjure/releases/download/v0.2.2/konjure-darwin-amd64.tar.gz"
+    sha256 "0399e5417a8aba9263660bdd84332b1649bf27d5e51797c6e3404f52cabceeef"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/carbonrelay/konjure/releases/download/v0.2.1/konjure-linux-amd64.tar.gz"
-      sha256 "8bf2a82b389076d80a9bd5f379c330e5d74353ef8fac95f851dd26c26349b61c"
+      url "https://github.com/carbonrelay/konjure/releases/download/v0.2.2/konjure-linux-amd64.tar.gz"
+      sha256 "2909a256377441615764bad42bf3c825ce3d3912678f338673beecebb6dcc0ad"
     end
   end
 
