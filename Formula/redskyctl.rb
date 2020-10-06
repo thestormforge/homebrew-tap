@@ -2,16 +2,16 @@
 class Redskyctl < Formula
   desc "Kubernetes Exploration"
   homepage "https://redskyops.dev/"
-  version "1.6.4"
+  version "1.6.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/redskyops/redskyops-controller/releases/download/v1.6.4/redskyctl-darwin-amd64.tar.gz"
-    sha256 "ab4cdd710578dd889be9fd627ca16523fdf85fa5d2014cd573cc9a1c3e51882c"
+    url "https://github.com/redskyops/redskyops-controller/releases/download/v1.6.5/redskyctl-darwin-amd64.tar.gz"
+    sha256 "03b837ac52844312f8284d93b571a4c2a03d32fe3ea34c51c56a828840dd7fe0"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/redskyops/redskyops-controller/releases/download/v1.6.4/redskyctl-linux-amd64.tar.gz"
-      sha256 "f5f7b8a9fb3edee3826466521e997b82d0be759b4534572cfaa0f960d899f26c"
+      url "https://github.com/redskyops/redskyops-controller/releases/download/v1.6.5/redskyctl-linux-amd64.tar.gz"
+      sha256 "24e01e4d12fc838c64894db250946ce7d8f03460790fcd5a20c4d6ee5629c9b1"
     end
   end
 
