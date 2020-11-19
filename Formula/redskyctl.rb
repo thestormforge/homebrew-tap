@@ -7,11 +7,11 @@ class Redskyctl < Formula
 
   if OS.mac?
     url "https://github.com/thestormforge/optimize-controller/releases/download/v1.8.1/redskyctl-darwin-amd64.tar.gz"
-    sha256 "6f2bdebd9a6c49daa5680a0b4793d38548b9272837371572fc05294989f5a142"
+    sha256 "262a1fc923b0dfb081ea3f5b3589f6c43397d06bb6f6076351ab10501691db66"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/thestormforge/optimize-controller/releases/download/v1.8.1/redskyctl-linux-amd64.tar.gz"
-    sha256 "afd5cbe69e43fdd6fbfbd032fb4affb5940ed3892a0972270d8718ba501a86ca"
+    sha256 "d174f79a7f7bfccb4c2b78139fabed92bc671ba71f10f5b16021d07db207da81"
   end
 
   def install
