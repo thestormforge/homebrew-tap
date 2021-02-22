@@ -10,11 +10,11 @@ class Konjure < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/thestormforge/konjure/releases/download/v0.2.3/konjure-darwin-amd64.tar.gz"
-    sha256 "1a98f9660e32449137e1f9d5b97d9f12c78b5962d71752a3697e146c89002366"
+    sha256 "ba8ec8cc356584737472de168afaa78328ff85d61d3a524f1a1fd7a6b8e30291"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/thestormforge/konjure/releases/download/v0.2.3/konjure-linux-amd64.tar.gz"
-    sha256 "59f844e3609fc1e3389f2245014d3565944b3cfad7ca5c0a385d655d9578cf3d"
+    sha256 "d807927a2ffe3d3eb020a394c4b332366e7eac89ce338ac47f60f174551b2af5"
   end
 
   def install
