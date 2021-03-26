@@ -5,16 +5,16 @@
 class Konjure < Formula
   desc "Manifest appear!"
   homepage "https://github.com/thestormforge/konjure/"
-  version "0.3.0-beta.6"
+  version "0.3.0-rc.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/thestormforge/konjure/releases/download/v0.3.0-beta.6/konjure-darwin-amd64.tar.gz"
-    sha256 "13b8daca59de74fdd14efa0d5727205fda0050eeab6bf7ffd5acad6efe5a0fd6"
+    url "https://github.com/thestormforge/konjure/releases/download/v0.3.0-rc.1/konjure-darwin-amd64.tar.gz"
+    sha256 "23daa75a74bd31750c8ebeb2531ef33f1f8f59363bb148b0b6f65a072e4083cb"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/thestormforge/konjure/releases/download/v0.3.0-beta.6/konjure-linux-amd64.tar.gz"
-    sha256 "5ec1b4c4773f5bb631f5fcaada5a29a37c3661f746f795240510471ca2a68afd"
+    url "https://github.com/thestormforge/konjure/releases/download/v0.3.0-rc.1/konjure-linux-amd64.tar.gz"
+    sha256 "d228d9d609b57601c7c391deb380aa6c8b4c93487ec83b1974120df01d528d72"
   end
 
   def install
