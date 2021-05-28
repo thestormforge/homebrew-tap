@@ -5,16 +5,16 @@
 class Redskyctl < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "1.12.0"
+  version "1.12.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/thestormforge/optimize-controller/releases/download/v1.12.0/redskyctl-darwin-amd64.tar.gz"
-    sha256 "8ed0725c0e2f01edf71d6e274ca045669ccbcf293ccf7dc0d62e221d4420ee72"
+    url "https://github.com/thestormforge/optimize-controller/releases/download/v1.12.1/redskyctl-darwin-amd64.tar.gz"
+    sha256 "d2bdf6b978de08e97651a76f2b83b37cdcac11f2030b4b326790e67b1f395687"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/thestormforge/optimize-controller/releases/download/v1.12.0/redskyctl-linux-amd64.tar.gz"
-    sha256 "2e30871220adab833d2fea7ba9405cb5cef457831fbc8c0b58eed6f38b93b4f6"
+    url "https://github.com/thestormforge/optimize-controller/releases/download/v1.12.1/redskyctl-linux-amd64.tar.gz"
+    sha256 "c286c879aa1f3385ef553b5a940c772f73e46582c54ebe8b0ac52d5e1b3cd89c"
   end
 
   def install
