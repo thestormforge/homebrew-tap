@@ -1,14 +1,14 @@
-# Red Sky Ops Tap
+# StormForge - Homebrew Tap
 
 ## How do I install these formulae?
-`brew install redskyops/tap/<formula>`
+`brew install thestormforge/tap/<formula>`
 
-Or `brew tap redskyops/tap` and then `brew install <formula>`.
+Or `brew tap thestormforge/tap` and then `brew install <formula>`.
 
 Or install via URL (which will not receive updates):
 
 ```
-brew install https://raw.githubusercontent.com/redskyops/homebrew-tap/master/Formula/<formula>.rb
+brew install https://raw.githubusercontent.com/thestormforge/homebrew-tap/master/Formula/<formula>.rb
 ```
 
 ## Documentation
