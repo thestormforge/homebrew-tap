@@ -5,20 +5,20 @@
 class Stormforge < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "2.0.6"
+  version "2.0.7"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.6/stormforge-darwin-arm64.tar.gz"
-      sha256 "9a814e44d822f06a8683041bdf6225bfbe35ddb6dc63beca516609ad8825b818"
+      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.7/stormforge-darwin-arm64.tar.gz"
+      sha256 "1f33b23fbfd958d2d106ccd685697a069d6d40cca143a266b52db4ea97540e5f"
 
       def install
         bin.install "stormforge"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.6/stormforge-darwin-amd64.tar.gz"
-      sha256 "dcb0c5f1aef0ceb654dfb759dfa4a547c08395c7bdd30233551960fb58ffbc2c"
+      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.7/stormforge-darwin-amd64.tar.gz"
+      sha256 "51bded704e6440fbea53df9b3b3de32a293f3b764b542399a8cacf4872c29e64"
 
       def install
         bin.install "stormforge"
@@ -28,8 +28,8 @@ class Stormforge < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.6/stormforge-linux-amd64.tar.gz"
-      sha256 "b2efe87c2556b587fe73b6c6d083a22ce9cb0cbc162759950510406cd2f800a1"
+      url "https://github.com/thestormforge/optimize-controller/releases/download/v2.0.7/stormforge-linux-amd64.tar.gz"
+      sha256 "424f776d90eeda291de568459a65dd45899d7603399ff14016807627d427f011"
 
       def install
         bin.install "stormforge"
