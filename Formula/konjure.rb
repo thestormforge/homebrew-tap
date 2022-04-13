@@ -5,20 +5,20 @@
 class Konjure < Formula
   desc "Manifest appear!"
   homepage "https://github.com/thestormforge/konjure/"
-  version "0.3.8"
+  version "0.3.9"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.3.8/konjure-darwin-amd64.tar.gz"
-      sha256 "349afdbdf167beec72c5d99fa545eaff913e188bd5f5129eee5f5ffdef8513f7"
+      url "https://github.com/thestormforge/konjure/releases/download/v0.3.9/konjure-darwin-amd64.tar.gz"
+      sha256 "312787a6c90fead907ccc2371ad17c2a4af6467ddc5860e5d00ea322dbb4aefc"
 
       def install
         bin.install "konjure"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.3.8/konjure-darwin-arm64.tar.gz"
-      sha256 "c64805cebdd9423d1db46d42fa2cff7b1b8586964d54a7e5487ecce60b92f7ab"
+      url "https://github.com/thestormforge/konjure/releases/download/v0.3.9/konjure-darwin-arm64.tar.gz"
+      sha256 "9cae0be51fd1efe87e710d3b93d9d1f564436ba5ac36c595a788c823dadb19ae"
 
       def install
         bin.install "konjure"
@@ -28,8 +28,8 @@ class Konjure < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.3.8/konjure-linux-amd64.tar.gz"
-      sha256 "6bf9dd31cfdfa3e13032130ead01827a7a0d96bc383e31c844e5c47c178bd4c1"
+      url "https://github.com/thestormforge/konjure/releases/download/v0.3.9/konjure-linux-amd64.tar.gz"
+      sha256 "a46e910d14d276faaed04ffdf95b1dc46d00507fe13a7b063afd5cab4f140b64"
 
       def install
         bin.install "konjure"
