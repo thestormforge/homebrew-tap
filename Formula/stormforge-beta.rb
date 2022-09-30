@@ -5,20 +5,20 @@
 class StormforgeBeta < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "3.0.0-beta.2"
+  version "3.0.0-beta.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.2/stormforge_3.0.0-beta.2_darwin_amd64.tar.gz"
-      sha256 "5c73e606919c1c1eba5405fc0132eeb2f0297a042f42625e190f1e79a8dc63d2"
+    if Hardware::CPU.arm?
+      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.1/stormforge_3.0.0-beta.1_darwin_arm64.tar.gz"
+      sha256 "9ddc99f908b34e622299859a011f62d02ff369bc1ed4c6b32bb8eea02f59795b"
 
       def install
         bin.install "stormforge"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.2/stormforge_3.0.0-beta.2_darwin_arm64.tar.gz"
-      sha256 "d2b7bb1531c230d128d7430fc99895fd05b117ce8cc0a0bc118887e18341ea12"
+    if Hardware::CPU.intel?
+      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.1/stormforge_3.0.0-beta.1_darwin_amd64.tar.gz"
+      sha256 "9406f6d4bddf9dbecc1b141e1358cb3ef74efbe60662241fc78564c12b349e09"
 
       def install
         bin.install "stormforge"
@@ -27,27 +27,21 @@ class StormforgeBeta < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.2/stormforge_3.0.0-beta.2_linux_amd64.tar.gz"
-      sha256 "b3764b56973d614a9a1ad1366f274cfbce501130c649ba9aa93eff1a5307aa50"
-
-      def install
-        bin.install "stormforge"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.2/stormforge_3.0.0-beta.2_linux_arm64.tar.gz"
-      sha256 "7186429b4ac2d89a1f69fc0685a7afaa8466ce2f0bfeacf16936c107833c7f7c"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.1/stormforge_3.0.0-beta.1_linux_arm64.tar.gz"
+      sha256 "a651483701ec8a969eb5e3d440f94b87e5ccbe42e58d5fcb82fcdf5255194bef"
 
       def install
         bin.install "stormforge"
       end
     end
-  end
+    if Hardware::CPU.intel?
+      url "https://downloads.stormforge.io/stormforge-cli/v3.0.0-beta.1/stormforge_3.0.0-beta.1_linux_amd64.tar.gz"
+      sha256 "2f1b1ecf43ae07151762ec73bfbeed760ea64efada247568a739589049cd1c16"
 
-  def caveats
-    <<~EOS
-      This is a pre-release version.
-    EOS
+      def install
+        bin.install "stormforge"
+      end
+    end
   end
 end
