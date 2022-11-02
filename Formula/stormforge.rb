@@ -10,7 +10,7 @@ class Stormforge < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://downloads.stormforge.io/stormforge-cli/v3.1.2/stormforge_3.1.2_darwin_arm64.tar.gz"
-      sha256 "3ea4973540e49b1a345d815cb37930c4dafc3cb63c334e4e30728bf8aef8220a"
+      sha256 "c7c5a02c7362a99a00b563b3e23af4f75092926bca6a3b3b6a34dc4184f0862c"
 
       def install
         bin.install "stormforge"
@@ -18,7 +18,7 @@ class Stormforge < Formula
     end
     if Hardware::CPU.intel?
       url "https://downloads.stormforge.io/stormforge-cli/v3.1.2/stormforge_3.1.2_darwin_amd64.tar.gz"
-      sha256 "6580b2aa315228222475de966491e2843cd1fe6cfd4bb4eddc0585e2c824f463"
+      sha256 "49b9e55518d4239d7573151a340749f35aa7a09c3f4e5de844675d0cc39fd0ed"
 
       def install
         bin.install "stormforge"
