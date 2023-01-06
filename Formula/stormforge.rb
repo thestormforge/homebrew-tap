@@ -5,20 +5,20 @@
 class Stormforge < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "3.1.3"
+  version "3.2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.1.3/stormforge_3.1.3_darwin_amd64.tar.gz"
-      sha256 "d01b96fc8ee6c43681cd38b6456e3edd7f5ca25b863651d528a22cc026cad8cf"
+    if Hardware::CPU.arm?
+      url "https://downloads.stormforge.io/stormforge-cli/v3.2.0/stormforge_3.2.0_darwin_arm64.tar.gz"
+      sha256 "36c146a7e66d44a1722dd2477a88667b5e5de5dc59011bb6ae278c86d8f25188"
 
       def install
         bin.install "stormforge"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.1.3/stormforge_3.1.3_darwin_arm64.tar.gz"
-      sha256 "082b5d7bd41989f17a6e39f071d4988fe6d8aa0ea44d769ee722b1e9653bea29"
+    if Hardware::CPU.intel?
+      url "https://downloads.stormforge.io/stormforge-cli/v3.2.0/stormforge_3.2.0_darwin_amd64.tar.gz"
+      sha256 "a8f5e8b511e3d6e6d9da04949b2a9d6898552c921c70de5c8cff2acafd339ff5"
 
       def install
         bin.install "stormforge"
@@ -28,16 +28,16 @@ class Stormforge < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.1.3/stormforge_3.1.3_linux_arm64.tar.gz"
-      sha256 "3a1155d4228581a4ee45fc23f66852d021023840757015b96de3295b23994d31"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.2.0/stormforge_3.2.0_linux_arm64.tar.gz"
+      sha256 "a508ed348962ad5d7a2010fa26e60d14f52a1e972ef77595f70686a7316c3a2c"
 
       def install
         bin.install "stormforge"
       end
     end
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.1.3/stormforge_3.1.3_linux_amd64.tar.gz"
-      sha256 "b1dbe823f8e5fd31fd4cdd341a871a3263a8f42bf7768abd61f8785948a1ed09"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.2.0/stormforge_3.2.0_linux_amd64.tar.gz"
+      sha256 "0cb7fbe6e7618d02c40e70fbdd81d517d13c616daade9fbbad122ce608860f4c"
 
       def install
         bin.install "stormforge"
