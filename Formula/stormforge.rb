@@ -5,42 +5,74 @@
 class Stormforge < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "3.3.0"
+  version "3.3.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.3.0/stormforge_3.3.0_darwin_arm64.tar.gz"
-      sha256 "9f1a76b0ab6d110ca8bba138a9ef21bb385a44ea0f91f8bccc89d5059a920de1"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.3.1/stormforge_3.3.1_darwin_arm64.tar.gz"
+      sha256 "b26252dee0c1ce20fdff29289fad19cdced5255d31356d50a89c2f8947c4988e"
 
       def install
         bin.install "stormforge"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.3.0/stormforge_3.3.0_darwin_amd64.tar.gz"
-      sha256 "67b19491f7a222efe533d62dccc88bcb30435fe95b0fc86e19919241dee817cd"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.3.1/stormforge_3.3.1_darwin_amd64.tar.gz"
+      sha256 "d300d843a364f4bbf95a0a94c8a3db12d5788f6b7fb11eba5dd1b5d67865060d"
 
       def install
         bin.install "stormforge"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.3.0/stormforge_3.3.0_linux_arm64.tar.gz"
-      sha256 "38adc9dfbb4b787447986410103c2b84e41f9efffac00cdebb3af7b4293ff258"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.3.1/stormforge_3.3.1_linux_arm64.tar.gz"
+      sha256 "4df521a216475bbac3adbff5ff7a1991ada886d313e1e7144870c20668c4b78e"
 
       def install
         bin.install "stormforge"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v3.3.0/stormforge_3.3.0_linux_amd64.tar.gz"
-      sha256 "253def6c58ffcb9ca0c48e6f850255a65917863c997f3e972d3b5f3f55580b11"
+      url "https://downloads.stormforge.io/stormforge-cli/v3.3.1/stormforge_3.3.1_linux_amd64.tar.gz"
+      sha256 "5841dee0aa8d6fa28b2732c1130fe072795f0642a870fc14299e85bd66594e0b"
 
       def install
         bin.install "stormforge"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
   end
