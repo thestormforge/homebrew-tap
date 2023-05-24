@@ -5,34 +5,58 @@
 class Konjure < Formula
   desc "Manifest appear!"
   homepage "https://github.com/thestormforge/konjure/"
-  version "0.4.3"
+  version "0.4.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.3/konjure-darwin-arm64.tar.gz"
-      sha256 "a7843c5b0a99747bd7168362fe8df908cfb53e9cddee86fcb6e2abcf15c83ffb"
+    if Hardware::CPU.intel?
+      url "https://github.com/thestormforge/konjure/releases/download/v0.4.4/konjure-darwin-amd64.tar.gz"
+      sha256 "6cb8545e001469b8b52afebd4115e6bfa30ce2272bcf649445f99fc81dd7a78c"
 
       def install
         bin.install "konjure"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "bash")
+        (bash_completion/"konjure").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "zsh")
+        (zsh_completion/"_konjure").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.3/konjure-darwin-amd64.tar.gz"
-      sha256 "3198b60550d271e3843884d4e056524e4bfd84523c1af150e515c7fca8ce355e"
+    if Hardware::CPU.arm?
+      url "https://github.com/thestormforge/konjure/releases/download/v0.4.4/konjure-darwin-arm64.tar.gz"
+      sha256 "f9cbcd0c2b3b81f03eb95e39bbd46499c90c0d6972b6334aa8c5c67c8bc65436"
 
       def install
         bin.install "konjure"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "bash")
+        (bash_completion/"konjure").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "zsh")
+        (zsh_completion/"_konjure").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.3/konjure-linux-amd64.tar.gz"
-      sha256 "24cbc3ab42e6d7ce618f8186f2b44d63401baddb3fcf02289d446bf8fd0433a5"
+      url "https://github.com/thestormforge/konjure/releases/download/v0.4.4/konjure-linux-amd64.tar.gz"
+      sha256 "585590e4bec1d751477d6cd79c583a922d8d092048000989e49eea28d749b843"
 
       def install
         bin.install "konjure"
+
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "bash")
+        (bash_completion/"konjure").write output
+
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "zsh")
+        (zsh_completion/"_konjure").write output
       end
     end
   end
