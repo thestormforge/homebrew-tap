@@ -8,9 +8,9 @@ class Stormforge < Formula
   version "4.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_darwin_arm64.tar.gz"
-      sha256 "5c1c8f001d3bbd03be1273f176b9c63d7876ded130d6cad014184bcf05cb5707"
+    if Hardware::CPU.intel?
+      url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_darwin_amd64.tar.gz"
+      sha256 "477651b9889633f12532aa87f541bf052a444e00a9f0cc3210f814a43308eeb1"
 
       def install
         bin.install "stormforge"
@@ -24,9 +24,9 @@ class Stormforge < Formula
         (zsh_completion/"_stormforge").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_darwin_amd64.tar.gz"
-      sha256 "fa99b9d0c165dbaa58d122bb919fb5426cd882926bf9ea89bd71c86ccf4ec907"
+    if Hardware::CPU.arm?
+      url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_darwin_arm64.tar.gz"
+      sha256 "303f3d4ae909b5951be8ae78592f6176dddfa67552f97d5de339ed45665d2181"
 
       def install
         bin.install "stormforge"
@@ -45,7 +45,7 @@ class Stormforge < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_linux_arm64.tar.gz"
-      sha256 "d6eccafe4125587680624551837bca7454c0414fc0d1bdef942a6655773dc697"
+      sha256 "51038566cff485c97d8a4126b1cdcccb6448a20d6d75be38c87e50ea6814293c"
 
       def install
         bin.install "stormforge"
@@ -61,7 +61,7 @@ class Stormforge < Formula
     end
     if Hardware::CPU.intel?
       url "https://downloads.stormforge.io/stormforge-cli/v4.0.2/stormforge_4.0.2_linux_amd64.tar.gz"
-      sha256 "6b51fd2fffc79d3d6515cc8b5ce78956ee65884b6f555c327a3209f0100a7183"
+      sha256 "2a938e852aae95f5a117e7b3f7279b0a736a3b91a5f107717b30edb17cf6fbc9"
 
       def install
         bin.install "stormforge"
