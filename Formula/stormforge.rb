@@ -5,12 +5,12 @@
 class Stormforge < Formula
   desc "Release with Confidence"
   homepage "https://www.stormforge.io/"
-  version "5.0.0"
+  version "5.0.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v5.0.0/stormforge_5.0.0_darwin_arm64.tar.gz"
-      sha256 "6f528ba2d11c4957c6cfdf0b042c371b12f2737e4c779fe46ab31548dc6c4ddf"
+    if Hardware::CPU.intel?
+      url "https://downloads.stormforge.io/stormforge-cli/v5.0.1/stormforge_5.0.1_darwin_amd64.tar.gz"
+      sha256 "5f1c4345ad093ee7d05407385e8239efede280b8701f86a19a00dd27d2ca143f"
 
       def install
         bin.install "stormforge"
@@ -24,9 +24,9 @@ class Stormforge < Formula
         (zsh_completion/"_stormforge").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v5.0.0/stormforge_5.0.0_darwin_amd64.tar.gz"
-      sha256 "5abfc55c8bd8e84c29ea328ee159dc938445782745094b505df1a322164c0c8c"
+    if Hardware::CPU.arm?
+      url "https://downloads.stormforge.io/stormforge-cli/v5.0.1/stormforge_5.0.1_darwin_arm64.tar.gz"
+      sha256 "523358f50eeda52a11d8f6669514f58fac4f383a8398a382a89e20c7e64a86a4"
 
       def install
         bin.install "stormforge"
@@ -44,8 +44,8 @@ class Stormforge < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v5.0.0/stormforge_5.0.0_linux_arm64.tar.gz"
-      sha256 "61040d0466b03369f246e55cce85c8746f2dbf2ceec9073edf1dc08bc4f081e3"
+      url "https://downloads.stormforge.io/stormforge-cli/v5.0.1/stormforge_5.0.1_linux_arm64.tar.gz"
+      sha256 "d55a863b3ae416725b11a669b99b0a037728695412d30248358b24e7d063588b"
 
       def install
         bin.install "stormforge"
@@ -60,8 +60,8 @@ class Stormforge < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v5.0.0/stormforge_5.0.0_linux_amd64.tar.gz"
-      sha256 "b96e63cd72f118280cd3173ba2c479ebfa39bac6bd9639a077290e3c685d8abc"
+      url "https://downloads.stormforge.io/stormforge-cli/v5.0.1/stormforge_5.0.1_linux_amd64.tar.gz"
+      sha256 "cea704a9ea11683619e80ac3b4ca1377773f27d17f1e6462b87d59cc828b632b"
 
       def install
         bin.install "stormforge"
