@@ -5,12 +5,12 @@
 class Konjure < Formula
   desc "Manifest appear!"
   homepage "https://github.com/thestormforge/konjure/"
-  version "0.4.9"
+  version "0.4.10"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.9/konjure-darwin-arm64.tar.gz"
-      sha256 "499fc27a9ce6c6f0748ff3f57c591dcc878d9e1b066bd559dc7496dada3b125a"
+    on_intel do
+      url "https://github.com/thestormforge/konjure/releases/download/v0.4.10/konjure-darwin-amd64.tar.gz"
+      sha256 "76476b20de606e7d3da7d919fff9338541098a39b33bc053623a059d1c84ef0b"
 
       def install
         bin.install "konjure"
@@ -24,9 +24,9 @@ class Konjure < Formula
         (zsh_completion/"_konjure").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.9/konjure-darwin-amd64.tar.gz"
-      sha256 "91affb7e5297547fc247f9134359519e4c924cde22e716b1d8f1be75ea0e0b30"
+    on_arm do
+      url "https://github.com/thestormforge/konjure/releases/download/v0.4.10/konjure-darwin-arm64.tar.gz"
+      sha256 "c8c576a39c1bee940b39f59703729ac3142612aded017ff4450be40319578b85"
 
       def install
         bin.install "konjure"
@@ -43,20 +43,22 @@ class Konjure < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/thestormforge/konjure/releases/download/v0.4.9/konjure-linux-amd64.tar.gz"
-      sha256 "e9e5872118d57cf967c341a8f742e05922dcf831d26ebc2f8d3427214fc979d5"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/thestormforge/konjure/releases/download/v0.4.10/konjure-linux-amd64.tar.gz"
+        sha256 "3df3481b18395a27fc55ecb4b45dfb9501126747ca16c87ecafeced936bd7c11"
 
-      def install
-        bin.install "konjure"
+        def install
+          bin.install "konjure"
 
-        # generate and install bash completion
-        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "bash")
-        (bash_completion/"konjure").write output
+          # generate and install bash completion
+          output = Utils.safe_popen_read("#{bin}/konjure", "completion", "bash")
+          (bash_completion/"konjure").write output
 
-        # generate and install zsh completion
-        output = Utils.safe_popen_read("#{bin}/konjure", "completion", "zsh")
-        (zsh_completion/"_konjure").write output
+          # generate and install zsh completion
+          output = Utils.safe_popen_read("#{bin}/konjure", "completion", "zsh")
+          (zsh_completion/"_konjure").write output
+        end
       end
     end
   end
