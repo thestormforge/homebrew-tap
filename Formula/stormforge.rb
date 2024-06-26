@@ -10,7 +10,7 @@ class Stormforge < Formula
   on_macos do
     on_intel do
       url "https://downloads.stormforge.io/stormforge-cli/v5.1.6/stormforge_5.1.6_darwin_amd64.tar.gz"
-      sha256 "d34357232f22566bd4255a3949e6506a9203d346767628ca2b202f499efeda63"
+      sha256 "c5a5e9de8893e17c2441f0d32ebd8f4b97c8c75c5f2ac3721b9cc60ce59da6e2"
 
       def install
         bin.install "stormforge"
@@ -26,7 +26,7 @@ class Stormforge < Formula
     end
     on_arm do
       url "https://downloads.stormforge.io/stormforge-cli/v5.1.6/stormforge_5.1.6_darwin_arm64.tar.gz"
-      sha256 "943b5c07181ecc31a0c63f95a9b237bd8444431647f95199f03a11282aadac60"
+      sha256 "21af60d25aa365d7972a84b7fdf88c0f08fe18f38ee20505bb87a3e4143c20db"
 
       def install
         bin.install "stormforge"
