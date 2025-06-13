@@ -5,12 +5,12 @@
 class Stormforge < Formula
   desc "Automated Kubernetes Workload Rightsizing"
   homepage "https://www.stormforge.io/"
-  version "6.0.0"
+  version "6.0.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.0.0/stormforge_6.0.0_darwin_amd64.tar.gz"
-      sha256 "e7c6b5392f8b985769657d4d5b040d794d8eacd187ef2bd9b3d8365596c3c92e"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.0.1/stormforge_6.0.1_darwin_amd64.tar.gz"
+      sha256 "7557f91fbfb80382aaebdf77f48979a2cead63aa35a0125b5e0ff1deba7ccb9a"
 
       def install
         bin.install "stormforge"
@@ -25,8 +25,8 @@ class Stormforge < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.0.0/stormforge_6.0.0_darwin_arm64.tar.gz"
-      sha256 "6f6060fc9b632fea1be1e59032047959fe367329dfbd235c2aacb8b5d52cf392"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.0.1/stormforge_6.0.1_darwin_arm64.tar.gz"
+      sha256 "556b1a0700023bb042529749f09e801fd5bf7a5f4f264ea5abebbca06a64024a"
 
       def install
         bin.install "stormforge"
@@ -43,40 +43,34 @@ class Stormforge < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://downloads.stormforge.io/stormforge-cli/v6.0.0/stormforge_6.0.0_linux_amd64.tar.gz"
-        sha256 "f615ff835ff42f72e17511661ebd13fb09bdf0ddfb9aeb18a5839f46c20f62ae"
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://downloads.stormforge.io/stormforge-cli/v6.0.1/stormforge_6.0.1_linux_amd64.tar.gz"
+      sha256 "a921293861441e26ec3ae61ba52caefab81358e9b03308c04f42d0e9549bf367"
+      def install
+        bin.install "stormforge"
 
-        def install
-          bin.install "stormforge"
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
 
-          # generate and install bash completion
-          output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
-          (bash_completion/"stormforge").write output
-
-          # generate and install zsh completion
-          output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
-          (zsh_completion/"_stormforge").write output
-        end
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://downloads.stormforge.io/stormforge-cli/v6.0.0/stormforge_6.0.0_linux_arm64.tar.gz"
-        sha256 "2e7113279f43b58b1a43ba414efc51ecf0a464181fb12fff43c23d03c6a8b6fc"
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://downloads.stormforge.io/stormforge-cli/v6.0.1/stormforge_6.0.1_linux_arm64.tar.gz"
+      sha256 "9af5cbe3476f24f70391f83a08f9e8d0fd3c62da496bbb5a639ceec381e26e50"
+      def install
+        bin.install "stormforge"
 
-        def install
-          bin.install "stormforge"
+        # generate and install bash completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
+        (bash_completion/"stormforge").write output
 
-          # generate and install bash completion
-          output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "bash")
-          (bash_completion/"stormforge").write output
-
-          # generate and install zsh completion
-          output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
-          (zsh_completion/"_stormforge").write output
-        end
+        # generate and install zsh completion
+        output = Utils.safe_popen_read("#{bin}/stormforge", "completion", "zsh")
+        (zsh_completion/"_stormforge").write output
       end
     end
   end
