@@ -5,12 +5,12 @@
 class Stormforge < Formula
   desc "Automated Kubernetes Workload Rightsizing"
   homepage "https://stormforge.io/"
-  version "6.2.4"
+  version "6.2.5"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.2.4/stormforge_6.2.4_darwin_amd64.tar.gz"
-      sha256 "78788687d91d0ddd2a8e4c2b8fe379ba41d88eaf6ceed1c2d6c28823485b43a3"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.2.5/stormforge_6.2.5_darwin_amd64.tar.gz"
+      sha256 "c768457d1bccdab2a48a17d48401a58f0c03c92f2c909b95f59c4fa933be783a"
 
       define_method(:install) do
         bin.install "stormforge"
@@ -25,8 +25,8 @@ class Stormforge < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.2.4/stormforge_6.2.4_darwin_arm64.tar.gz"
-      sha256 "cb5cbc53bfbe3dddec9768cd20a2be10bb5b0800ce29f1778d093a7fb63e5705"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.2.5/stormforge_6.2.5_darwin_arm64.tar.gz"
+      sha256 "eb7666260d1364046a67c8971b746623e2b1713423fff9502f05132412dd1855"
 
       define_method(:install) do
         bin.install "stormforge"
@@ -44,8 +44,8 @@ class Stormforge < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.2.4/stormforge_6.2.4_linux_amd64.tar.gz"
-      sha256 "f8f91e4deb9f77288c66891676737a320f0e7d7103393a53b14695892248caf2"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.2.5/stormforge_6.2.5_linux_amd64.tar.gz"
+      sha256 "17627107efdbb8da82abdefe2f07f874f7b3b7946b78891f9f30882098adcf41"
       define_method(:install) do
         bin.install "stormforge"
 
@@ -59,8 +59,8 @@ class Stormforge < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.stormforge.io/stormforge-cli/v6.2.4/stormforge_6.2.4_linux_arm64.tar.gz"
-      sha256 "45547c851293dce72f6b13b7f5a91018733e62bf7326a502f1e0c5adc08dd697"
+      url "https://downloads.stormforge.io/stormforge-cli/v6.2.5/stormforge_6.2.5_linux_arm64.tar.gz"
+      sha256 "daf12dc1779cd7f8ae1682d60ddc2864e5d1baf1f547d5bab5f6a3caa0e63cc6"
       define_method(:install) do
         bin.install "stormforge"
 
